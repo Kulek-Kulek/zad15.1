@@ -1,12 +1,12 @@
 "use strict";
 
-//zadanie z łączenia stringów - zadanie mówi, by nie używać '+', join lub cancat. Zatem jak?  niestety 
+//zadanie z łączenia stringów  
 
 var one = "hello";
 var two = "world";
-console.log(one + two);
+console.log(one + " " + two);
 
-// zadanie z mnożenia liczb
+// zadanie: mnożenie liczb
 
 var x = prompt('liczba') || 1;
 var y = prompt('liczba') || 1;
@@ -18,38 +18,39 @@ var multiply = function multiply(x, y) {
 alert('iloczyn podanych liczb to ' + multiply(x, y));
 console.log(multiply(x, y));
 
-// zadanie liczenie średniej - niby działa, ale coś mi mówi, że nie o to chodzi
+// zadanie liczenie średniej 
 
-var numbers = [2, 4, 5, 6, 8, 3, 2, 4, 7];
-var first = numbers[0],
-    second = numbers[1],
-    third = numbers[2],
-    rest = numbers.slice(3);
+var numbers = [1, 3, 6, 6, 8, 2, 15, 70];
+var average = numbers.reduce(function (accumulate, current) {
+   return accumulate + current;
+}, 0) / numbers.length;
 
-var average = function average(numbers) {
-   return (first + second + third) / (numbers.length - rest.length);
-};
-
-console.log(average(numbers));
+console.log(average);
 
 // zadanie 4 - liczenie średniej ocen z tablicy
 
-var grades = [1, 5, 5, 5, 4, 3, 3, 2, 1];
 
-//??????????
+var av = function av() {
+   for (var _len = arguments.length, grades = Array(_len), _key = 0; _key < _len; _key++) {
+      grades[_key] = arguments[_key];
+   }
 
+   return grades.reduce(function (accumulate, current) {
+      return accumulate + current;
+   }, 0) / grades.length;
+};
 
-// 
+console.log(av(1, 3, 5, 8, 45, 9, 2));
+
+//zad 5
 
 var table = [1, 4, 'Iwona', false, 'Nowak'];
 
-var fourth = table[0],
-    fifth = table[1];
+var jeden = table[0],
+    four = table[1],
+    firstName = table[2],
+    boolean = table[3],
+    lastName = table[4];
 
-var names = function names(table) {
-   return console.log(names(table));
-};
 
-console.log(names(table));
-
-// istny cyrk
+console.log(firstName, lastName);
